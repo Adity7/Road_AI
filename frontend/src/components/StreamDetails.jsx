@@ -10,7 +10,8 @@ function StreamDetails({ stream }) {
         if (!stream?.id) return;
         
         try {
-            const response = await fetch(`http://127.0.0.1:8000/streams/${stream.id}/results`);
+            const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000';
+            const response = await fetch(`${apiBaseUrl}/streams/${stream.id}/results`);
             if (!response.ok) throw new Error('Failed to fetch results');
             const data = await response.json();
             setResults(data);
