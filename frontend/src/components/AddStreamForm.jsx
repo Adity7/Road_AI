@@ -44,7 +44,8 @@ function AddStreamForm({ onAddStream, onCancel, setError }) {
                     const formData = new FormData();
                     formData.append('file', file);
                     
-                    const response = await fetch('http://127.0.0.1:8000/upload', {
+                    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000';
+                    const response = await fetch(`${apiBaseUrl}/upload`, {
                         method: 'POST',
                         body: formData,
                     });
@@ -306,3 +307,4 @@ function AddStreamForm({ onAddStream, onCancel, setError }) {
 }
 
 export default AddStreamForm;
+
