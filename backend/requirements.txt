@@ -1,20 +1,14 @@
-# PyTorch Installation
-# Specifies the official PyTorch repository as an additional source.
-# This ensures you get the correct CUDA-enabled builds if needed.
 --extra-index-url https://download.pytorch.org/whl/cu118
 
-# Core AI & Computer Vision Dependencies
-ultralytics==8.0.196
-torch>=2.0.0,<2.1.0
-torchvision>=0.15.0,<0.16.0
+ultralytics>=8.2.0
+torch>=2.5.0
+torchvision>=0.20.0
 opencv-python-headless==4.8.1.78
 
-# Web Backend (FastAPI)
 fastapi==0.104.1
 uvicorn[standard]==0.24.0.post1
 python-multipart==0.0.6
 pydantic>=2.5.0,<3.0.0
 
-# Build System (for Rust extensions, if any)
 maturin>=0.14.0
 setuptools-rust>=1.5.0
