@@ -1,8 +1,18 @@
-torch==2.5.0 --index-url https://download.pytorch.org/whl/cpu
-torchvision==0.20.0 --index-url https://download.pytorch.org/whl/cpu
-fastapi==0.112.1
-uvicorn[standard]==0.31.0
-opencv-python-headless==4.10.0.84
-python-multipart==0.0.9
-pydantic==2.8.2
-ultralytics==8.3.182
+--index-url https://pypi.org/simple/
+--find-links https://download.pytorch.org/whl/torch_stable.html
+
+# Core dependencies
+torch>=2.0.0,<2.1.0
+torchvision>=0.15.0,<0.16.0
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+opencv-python-headless==4.8.1.78
+python-multipart==0.0.6
+pydantic==2.5.0
+
+# Rust-based packages
+maturin>=0.12.0
+setuptools-rust>=1.1.2
+
+# Ultralytics with compatible PyTorch version
+ultralytics==8.0.196
