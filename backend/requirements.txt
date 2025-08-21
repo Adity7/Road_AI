@@ -1,8 +1,6 @@
+torch==2.0.1 --index-url https://download.pytorch.org/whl/cpu
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
-opencv-python==4.8.1.78
-torch>=2.6.0
-ultralytics==8.0.196
+opencv-python-headless==4.8.1.78
 python-multipart==0.0.6
 pydantic==2.5.0
-gunicorn 
