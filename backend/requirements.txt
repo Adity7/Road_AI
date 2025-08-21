@@ -1,18 +1,26 @@
---index-url https://pypi.org/simple/
---find-links https://download.pytorch.org/whl/torch_stable.html
+-- PyTorch Installation --
+Specifies the official PyTorch repository as an additional source.
+This is the recommended way to ensure you get the correct CUDA-enabled builds if needed.
+--extra-index-url https://download.pytorch.org/whl/cu118
 
-# Core dependencies
+-- Core AI & Computer Vision Dependencies --
+Ultralytics YOLOv8 and its core dependencies, torch and torchvision.
+The versions are compatible with each other.
+ultralytics==8.0.196
 torch>=2.0.0,<2.1.0
 torchvision>=0.15.0,<0.16.0
-fastapi==0.104.1
-uvicorn[standard]==0.24.0
 opencv-python-headless==4.8.1.78
+
+-- Web Backend (FastAPI) --
+FastAPI and the Uvicorn server.
+Pydantic v2 is explicitly used, which is compatible with this FastAPI version.
+fastapi==0.104.1
+uvicorn[standard]==0.24.0.post1
 python-multipart==0.0.6
-pydantic==2.5.0
+pydantic>=2.5.0,<3.0.0
 
-# Rust-based packages
-maturin>=0.12.0
-setuptools-rust>=1.1.2
-
-# Ultralytics with compatible PyTorch version
-ultralytics==8.0.196
+-- Build System (for Rust extensions, if any) --
+These are required if your project includes Rust-based Python extensions.
+They do not conflict with the other packages.
+maturin>=0.14.0
+setuptools-rust>=1.5.0
